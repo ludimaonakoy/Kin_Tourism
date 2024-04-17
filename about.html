@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+    <title>About Me</title>
+</head>
+<style>
+    body{
+        
+    }
+   /* ------------------about-------------------- */
+#about {
+    padding: 80px 0;
+    color: #ababab;
+    background-color: black;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .about-col1 {
+    flex-basis: 35%;
+  }
+  .about-col1 img {
+    width: 100%;
+    border-radius: 30px;
+  }
+  .about-col2 {
+    flex-basis: 60%;
+  }
+  /* ------------------about-------------------- */
+  /* ------------------titles under about-------------------- */
+  .sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .tab-title {
+    display: flex;
+    margin: 20px 0 40px;
+  }
+  /* ------------------titles under about-------------------- */
+  .tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
+  .tab-links::after {
+    content: " ";
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+  }
+  .tab-links.active-link::after {
+    width: 50%;
+  }
+  .tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+  }
+  .tab-contents ul li span {
+    color: #b54769;
+    font-size: 14px;
+  }
+  /* ------------------contents under about-------------------- */
+  /* ------------------contents skills hidden under about-------------------- */
+  .tab-contents {
+    display: none;
+  }
+  /* ------------------contents skills visible under about-------------------- */
+  .tab-contents.active-tab {
+    display: block;
+  }
+  /* ------------------services session-------------------- */
+  #services {
+    padding: 30px 0;
+  }
+  
+  /* ------------------display in a grid mode best one : servives -------------------- */
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+  }
+  /* -------------style the services (grid): servives ------------ */
+  .services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 18px;
+    /* ------- 1. enable transition whenever the curser is over --------- */
+    transition: background 0.5s, transform 0.5s;
+  }
+  /* ------------------style the icons: servives -------------------- */
+  .services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  .services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  .services-list div p {
+    font-size: 13px;
+    font-weight: 300;
+  }
+  .services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  /* ---------- 2. enable transition whenever the curser is over ------------- */
+  .services-list div:hover {
+    background: #ff004f;
+    transform: translate(-10px);
+  }
+/* ------css for small screens--------- */
+@media only screen and (max-width: 600px) {
+  #header {
+    background-image: url(pics/jr3.JPG);
+  }
+  .header-text {
+    margin-top: 100%;
+    font-size: 16px;
+  }
+  .header-text h1 {
+    font-size: 30px;
+  }
+  nav .fas {
+    display: block;
+    font-size: 25px;
+  }
+  nav ul {
+    background: #ff004f;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+  nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+  .sub-title {
+    font-size: 40px;
+  }
+  .about-col1,
+  .about-col2 {
+    flex-basis: 100%;
+  }
+  .about-col1 {
+    margin-bottom: 30px;
+  }
+  .about-col2 {
+    font-size: 14px;
+  }}
+</style>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        color: #000;
+        
+      }
+      
+      html {
+        box-sizing: border-box;
+      }
+      
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      
+      .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+        
+      }
+      
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+        
+      }
+      
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+      }
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      .title {
+        color: grey;
+      }
+      .hi{
+        color: #000;
+      }
+      .hey{
+        color: #000;
+        margin-top: 10px;
+      }
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .button:hover {
+        background-color: #555;
+      }
+      
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+      
+      
+</style>
+<style>
+  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+<body>
+
+  <!-- MAIN (Center website) -->
+  <div class="main">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="Food.html" >Food</a>
+      <a href="myculture.html">Culture</a>
+      <a href="edication.html">Education</a>
+      <!-- <a href="contact.html">Contact</a> -->
+      <a href="#about.html" class="active">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+ 
+    <!-- -------------about------------ --> 
+    <div id="about">
+<div class="container" >
+    <div class="row">
+        <div class="about-col1">
+            <img src="kin/profile&about/jl.jpeg" alt="juniorludima">
+        </div>
+        <div class="about-col2"><h1 class="sub-title">About Me</h1>
+            <p>As an  IT Support i maintain the computer networks, 
+              providing technical support and ensuring the whole company runs smoothly. 
+              My job is to monitor and maintain the company computer systems, 
+              installs, and configures hardware and software, and solves technical issues as they arise.<br>
+              IT Support job description:<br>Installing and configuring computer hardware, software, systems, networks, printers, and scanners.
+              Monitoring and maintaining computer systems and networks,Responding in a timely manner to service issues and requests.
+              Repairing and replacing equipment as necessary.Testing new technology,Providing technical support across the company (this may be in person or over the phone)
+              Possibly training junior staff.
+            </p>
+                 <!-- -------------tab-links under about------------ --> 
+                <div class="tab-title">
+                     <!-- -------------onclick function under javascript------------ -->
+                    <p class="tab-links active-link"  onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links"  onclick="opentab('experience')">Experience</p>
+                    <!-- <p class="tab-links" onclick="opentab('education')">Education</p> -->
+                </div>
+                 <!-- -------------first tab-contents under about : skills------------ --> 
+                <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Database admin</span><br>Designing Database</li>
+                    <li><span>Data Analyst</span><br>Analyzing Data</li>
+                    <li><span>Network Engineer</span><br>Implement The Computer Network</li>
+                    <li><span>Web Development</span><br>Web App Development</li>
+                    
+                </ul>
+            </div> 
+             <!-- -------------second tab-contents under about: experience------------ --> 
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>2020 - 2021</span><br>Internship at Office Congolais of Control</li>
+                    <li><span>2021 - 2022</span><br> Database Training </li>
+                    <li><span>2021 - 2022</span><br>Network Computer Training</li>
+                    <li><span>2020 - 2021</span><br>Internship at Office Congolais of Control</li>
+                    <li><span>2023 - 2024</span><br>Attachement at Amref </li>
+                    <li><span>2024 - 2025</span><br>intership at Amref </li>
+                </ul>
+            </div> 
+             <!-- -------------trhid tab-contents under about : education------------ --> 
+            <!-- <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2019</span><br>College from ISIPA</li>
+                    <li><span>2020 </span><br>Training from CKalonda</li>
+                    <li><span>2021 - current</span><br>IT from JKUAT</li>
+                </ul>
+            </div>  -->
+        </div>
+                <!-- -------------End of tab-contents and sub=titles------------ --> 
+
+    </div>
+
+</div>
+    </div>
+    <h2 style="text-align:center" class="hi">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="kin/profile&about/ceo01.webp" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2 class="hi">Madeleine Bella </h2>
+        <p class="title">Analyst</p>
+        <p class="hey">conduct research and analyze publicly available or privately collected data to find patterns and
+             trends that can help in decision-making and planning.Their duties include gathering company information...</p>
+        <p class="hey">Yasmine@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="kin/profile&about/ceo02.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2 class="hi">Junior Ross</h2>
+        <p class="title">ICT Manager</p>
+        <p class="hey"> is a person who produces or creates art using conscious skill and creative imagination.
+             Designer is a person who visualizes a concept that is in the abstract form and prepares the blueprint..</p>
+        <p class="hey">junior@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="kin/profile&about/ceo03.webp" alt="John" style="width:100%">
+      <div class="container">
+        <h2 class="hi">Ashay Osman</h2>
+        <p class="title">Developer</p>
+        <p class="hey"> is a technology professional who works on, builds and creates software, 
+            websites, developers require a knowledge of coding to write 
+            and debug source code for applications...</p>
+        <p class="hey">Ashay@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-content">
+  <div class="left box">
+    <h2>About us</h2>
+    <div class="content">
+      <p class="para">We create new software and improve existing software applications. 
+        We design and write the code used to build everything from Web Apps to mobile apps to video games.
+         Often, project managers provide software developers with an organization's business goals, 
+        and we translate those needs into software requirements. </p>
+      <div class="social">
+        <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+        <a href="#"><span class="fab fa-twitter"></span></a>
+        <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+        <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="center box">
+    <h2>Address</h2>
+    <div class="content">
+      <div class="place">
+        <span class="fas fa-map-marker-alt"></span>
+        <span class="text">Mbagathi, HightRise</span>
+      </div>
+      <div class="phone">
+        <span class="fas fa-phone-alt"></span>
+        <span class="text">(+254)717718388</span>
+      </div>
+      <div class="email">
+        <span class="fas fa-envelope"></span>
+        <span class="text">ludimajunior@Gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right box">
+    <h2>Contact us</h2>
+    <div class="content">
+     
+      <form  id="contactForm">
+        <div class="alert">Your message sent successfully</div>
+        <div class="email">
+          <div class="text">Email *</div>
+          <input id="emails" type="email" required>
+        </div>
+        <div class="msg">
+          <div class="text">Message *</div>
+          <textarea id="messages"  rows="2" cols="25" required></textarea>
+        </div>
+        <div class="btn">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="bottom">
+    <center>
+      <span class="credit">Created By <a href="https://youtube.com/c/codingnepal">JuniorLudima</a> | </span>
+      <span class="far fa-copyright"></span><span> 2024 All rights reserved.</span>
+    </center>
+  </div>
+</body>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    color: #d9d9d9;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+  }
+  .content1{
+    position: relative;
+    margin: 130px auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .content1 .text{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #202020;
+  }
+  .content1 .p{
+    font-size: 2.1875rem;
+    font-weight: 600;
+    color: #202020;
+  }
+  footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: #111;
+  }
+  .main-content{
+    display: flex;
+    background-color: #000;
+  }
+  .main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+  }
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .box .content{
+    margin: 20px 0 0 0;
+    position: relative;
+  }
+  .box .content:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: #1a1a1a;
+  }
+  .box .content:after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: #f12020;
+    top: -10px;
+  }
+  .left .content p{
+    text-align: justify;
+  }
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+  .left .content .social a{
+    padding: 0 2px;
+  }
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .left .content .social a span:hover{
+    background: #f12020;
+  }
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .center .content .fas:hover{
+    background: #f12020;
+  }
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+  .center .content .phone{
+    margin: 15px 0;
+  }
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color:white;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #3498db;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #f12020;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color: #f12020;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+  .content .para{
+    color: white;
+  }
+  
+  @media screen and (max-width: 900px) {
+    footer{
+      position: relative;
+      bottom: 0px;
+    }
+    .main-content{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .main-content .box{
+      margin: 5px 0;
+    }
+  }
+</style>
+<style>
+  
+    .alert {
+      width: 85%;
+      background: #0a0406;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 900;
+      display: none;
+      color: white;
+    }
+</style>
+<script>
+    // declare two variables 
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    //define the function with the onclick function whiche is called opentab
+    function opentab(tabname){
+        // to make the skills invisible once clicked with remove method
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        // to make the skills invisible once clicked with remove method
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        // display the color of experience and education once clicked
+        event.currentTarget.classList.add("active-link");
+        // display the content of experience and education once clicked
+        document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+<script>
+  
+  // initialize firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // reference your database
+  var tourismFormDB = firebase.database().ref("tourism");
+  //contactform is the ID of the form from html
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", submitForm);
+  //if the form get submitted it will call the submitform as a function
+  function submitForm(e) {
+    e.preventDefault();
+
+ 
+    var emails = getElementVal("emails");
+    var messages = getElementVal("messages");
+
+    saveMessages( emails, messages);
+
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+
+    //   remove the alert
+    setTimeout(() => {
+      document.querySelector(".alert").style.display = "none";
+    }, 3000);
+
+    //   reset the form
+    document.getElementById("contactForm").reset();
+  }
+
+  const saveMessages = (emails, messages) => {
+    var newContactForm = tourismFormDB.push();
+
+    newContactForm.set({
+   
+      emails: emails,
+      messages: messages,
+    });
+  };
+
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  };
+       
+ 
+      
+</script>
+</html>

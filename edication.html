@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+      <!-- Font Awesome Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+      <!-- Custom CSS -->
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(kin/educatios/back-image.png);
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+}
+
+nav{
+    padding:10px 0 ;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+.logo{
+    width: 140px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+}
+.log-btn{
+    text-decoration: none;
+    color: #333;
+    margin-right: 15px;
+    font-weight: 400;
+}
+.download-btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #df4881,#c430d7);
+    font-size:14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+
+}
+.content{
+    margin-top: 5%;
+    max-width: 600px;
+}
+.content h1{
+    font-size: 70px;
+    color: #222;
+
+}
+.content p{
+    margin: 10px 0 30px;
+    color: #333;
+    animation-delay: 0.5s;
+}
+.content .download-btn{
+    padding: 15px 80px;
+    font-size: 16px;
+    animation-delay: 1s;
+}
+ .download-btn:hover{
+    border-top-right-radius: 30px;
+ }
+ .feature{
+    width: 530px;
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+
+ }
+ .feature.anim{
+    animation-delay:2.5s;
+ }
+.anim{
+opacity: 0;
+transform: translateY(30px);
+animation: moveup 0.5s linear forwards;
+}
+@keyframes moveup{
+100%{
+    opacity: 1;
+    transform: translateY(0px);
+}
+}
+  /* Media queries for smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .logo {
+        width: 100px; /* Adjust logo size for smaller screens */
+    }
+
+    nav ul li {
+        margin: 10px 3px; /* Adjust margin for smaller screens */
+    }
+
+    .log-btn {
+        margin-right: 5px; /* Adjust margin for smaller screens */
+    }
+
+    .download-btn {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        font-size: 11px; /* Adjust font size for smaller screens */
+        border-radius: 15px; /* Adjust border-radius for smaller screens */
+    }
+
+    .content h1 {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .content p {
+        margin-bottom: 15px; /* Adjust margin-bottom for smaller screens */
+    }
+
+    .content .download-btn {
+        padding: 10px 25px; /* Adjust padding for smaller screens */
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+   
+}
+/* Media queries for larger screens */
+@media screen and (min-width: 700px) {
+  /* Adjustments for larger screens (if needed) */
+  /* You can add more adjustments here if necessary */
+
+
+}
+</style>
+<style>
+   
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;900&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  
+  body{
+    background: #eeeff4;
+  }
+  
+  .wrapper .header{
+    width: 100%;
+    height: 50px;
+    background: #e36686;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 900;
+  }
+  
+  .cards_wrap{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .cards_wrap .card_item{
+    padding: 15px 25px;
+    width: 25%;
+  }
+  
+  .cards_wrap .card_inner{
+    background: #fff;
+    border-radius: 5px;
+    padding: 35px 20px;
+    min-width: 225px;
+    min-height: 315px;
+    max-height: 370px;
+    width: 100%;
+  }
+  
+  .cards_wrap .card_item img{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .cards_wrap .card_item .role_name{
+    color: #e36686;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 20px;
+    white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+  
+  .cards_wrap .card_item .real_name{
+    color: #010a0c;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 5px 0 10px;
+  }
+  
+  .cards_wrap .card_item .film{
+    font-size: 14px;
+    line-height: 24px;
+    color: #7b8ca0;
+  }
+  
+  @media screen and (max-width: 1024px){
+    .cards_wrap .card_item{
+      width: 33%;
+    }
+  }
+  
+  @media screen and (max-width: 768px){
+    .cards_wrap .card_item{
+      width: 50%;
+    }
+    .wrapper .header{
+      font-size: 16px;
+      height: 60px;
+    }
+  }
+  
+  @media screen and (max-width: 568px){
+    .cards_wrap .card_item{
+      width: 100%;
+    }
+    .wrapper .header{
+      font-size: 14px;
+    }
+  }
+      
+     
+</style>
+<style>
+    body, html {
+        margin-top: 0%;
+        height: 100%;
+       
+        
+    }
+    
+</style>
+<style>
+      /* Importing Google font - Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1250px;
+    margin: 150px auto;
+    padding: 20px;
+    gap: 20px;
+   
+
+}
+
+.card-list .card-item {
+    background: #fff;
+    padding: 26px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
+   
+}
+
+.card-list .card-item:hover {
+    border: 2px solid #000;
+}
+
+.card-list .card-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #2196F3;
+}
+
+.card-list span {
+    display: inline-block;
+    background: #F7DFF5;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.card-list .developer {
+    background-color: #F7DFF5; 
+    color: #B22485;
+}   
+
+.card-list .designer {
+    background-color: #d1e8ff;
+    color: #2968a8;
+}
+
+.card-list .editor {
+    background-color: #d6f8d6; 
+    color: #205c20;
+}
+
+.card-item h3 {
+    color: #000;
+    font-size: 1.438rem;
+    margin-top: 28px;
+    font-weight: 600;
+}
+
+.card-item .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-35deg);
+    height: 40px;
+    width: 40px;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-top: 40px;
+    transition: 0.2s ease;
+}
+
+.card-list .card-item:hover .arrow  {
+    background: #000;
+    color: #fff; 
+}
+
+@media (max-width: 1200px) {
+    .card-list .card-item {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .card-list {
+        margin: 0 auto;
+    }
+  
+}
+</style>
+<style>
+  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #df4881;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #06130e;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+<body>
+    <!-- MAIN (Center website) -->
+<div class="main">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="Food.html">Food</a>
+    <a href="myculture.html">Culture</a>
+    <a href="#edication.html" class="active">Education</a>
+    <!-- <a href="contact.html">Contact</a> -->
+    <a href="about.html">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="hero">
+
+    <nav>
+        <img src="kin/educatios/logo.png" alt="" class="logo">
+         <!-- <ul>
+            <li><a href="#">Welcome</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">FeedBack</a></li>
+        </ul>  -->
+        <div>
+            <a href="#" class="log-btn"></a>
+            <a href="#" class="download-btn">Join Us Now</a>
+        </div>
+    </nav>
+    <div class="content">
+    <h1 class="anim">Make <br>New Friends</h1>
+    <p class="anim"> School Life is the best time of our life <br> we make new friends,
+       learn new things <br>and build our career there. </p>
+        <!-- <a href="#" class="download-btn anim">Join Now</a> -->
+    
+    </div>
+    <img src="kin/educatios/student03.jpg" alt="" class="feature anim">
+ 
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="header">"Study in Kinshasa"</div>
+      
+        <div class="cards_wrap">
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/inbtp02.jpg">
+              <div class="role_name">INBTP</div>
+              <div class="real_name">Institut National du Bâtiment et des Travaux Publics</div>
+              <div class="film">21, Avenue de la montagne, Joli Parc/Ngaliema - Kinshasa,
+                info@inbtp.ac.cd,(+243 821330740)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/isipa02.png">
+              <div class="role_name">ISIPA</div>
+              <div class="real_name">INSTITUT SUPERIEUR D’INFORMATIQUE PROGRAMMATION ET ANALYSE</div>
+              <div class="film">N° 7518, Avenue Shaumba Kinshasa / Gombe, contact@isipa.cd(+243) 999 271 690.</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/isc02.jpg">
+              <div class="role_name">ISC</div>
+              <div class="real_name">Institut Supérieur de Commerce</div>
+              <div class="film">Av.not,Boulevard du 24,Gongo-Kinshasa,contact@isc-kinshasa.net
+                ,(+243 827 291 026)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/upn01.jpg">
+              <div class="role_name">UPN</div>
+              <div class="real_name">Université Pédagogique Nationale</div>
+              <div class="film">Route de Matadi/Avenue de la Libération Quartier Binza/UPN B.P. 8815, Kinshasa, RDC,
+                +243...,rectorat@upnrdc.net,
+                admissions@astrialearning.com</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/prince liage.jpg">
+              <div class="role_name"> Prince de Liège</div>
+              <div class="real_name">High School</div>
+              <div class="film">1, Avenue de la Gombe, Kinshasa (Gombe),contact@lpl-rdc.com ,(+243 818 946 452)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/ista01.jpg">
+              <div class="role_name">ISTA</div>
+              <div class="real_name">Institut Supérieur des Techniques Appliquées</div>
+              <div class="film">Av.des Aedromes A314,785 Barumbu,
+                ista_kin@ista.ac.cd,(+243811717377)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/inpp02.jpg">
+              <div class="role_name">INPP</div>
+              <div class="real_name">INSTITUT NATIONAL DE PREPARATION PROFESSIONELLE</div>
+              <div class="film">6ème Rue,Limete Industriel,contact@inpp.cd,
+                (+243 903 773 556)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/unikin02.jpg">
+              <div class="role_name">UNIKIN</div>
+              <div class="real_name">UNIVERSITE DE KINSHASA</div>
+              <div class="film">Kinshasa-ngaliema,rectorat@unikin.ac.cd,
+                (+243 84 84 31 588)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/aurora01.jpg">
+              <div class="role_name">INSTITUT AUROTA</div>
+              <div class="real_name">HIGH SCHOOL</div>
+              <div class="film">8, Av. Kalemie, Gombe,
+                info@institutaurora.com,(+243971 744 509)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/upn high01.jpg">
+              <div class="role_name">UPN</div>
+              <div class="real_name">HIGH SCHOOL</div>
+              <div class="film">Av Bobozo/Route Matadi Binza/Ngaliema-kinshasa,
+                admissions@astrialearning.com</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/ucc01.jpg">
+              <div class="role_name">UCC</div>
+              <div class="real_name">Université Catholique du Congo</div>
+              <div class="film">Limete 1ere Rue Presidentiellle,(+243 999 306 226)</div>
+            </div>
+          </div>
+          <div class="card_item">
+            <div class="card_inner">
+              <img src="kin/educatios/kingom.jpeg">
+              <div class="role_name">KHMS</div>
+              <div class="real_name">Kingdom Heritage Model School</div>
+              <div class="film">Av petit boulevard ,5 ème Rue industriel, Congo - Kinshasa,(+243 826 070 127) </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+   
+      <div class="card-list">
+        <a href="#" class="card-item">
+            <img src="kin/educatios/edu3.jpg" alt="Card Image">
+            <span class="developer">Helen Hayes
+            </span>
+            <h3>“The expert in anything was once a beginner.”</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item">
+            <img src="kin/educatios/OFF7.jpg" alt="Card Image">
+            <span class="designer">Albert Einstein</span>
+            <h3>“Learn from yesterday. Live for today. Hope for tomorrow.”</h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+        <a href="#" class="card-item">
+            <img src="kin/educatios/edu04.webp" alt="Card Image">
+            <span class="editor">Malcolm X</span>
+            <h3>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.” </h3>
+            <div class="arrow">
+                <i class="fas fa-arrow-right card-icon"></i>
+            </div>
+        </a>
+    </div>
+    <div class="main-content">
+      <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+          <p class="para">We create new software and improve existing software applications. 
+            We design and write the code used to build everything from Web Apps to mobile apps to video games.
+             Often, project managers provide software developers with an organization's business goals, 
+            and we translate those needs into software requirements. </p>
+          <div class="social">
+            <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+            <a href="#"><span class="fab fa-twitter"></span></a>
+            <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+            <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="center box">
+        <h2>Address</h2>
+        <div class="content">
+          <div class="place">
+            <span class="fas fa-map-marker-alt"></span>
+            <span class="text">Mbagathi, HighRise</span>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone-alt"></span>
+            <span class="text">(+254)717718388</span>
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope"></span>
+            <span class="text">ludimajunior@Gmail.com</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="right box">
+        <h2>Contact us</h2>
+        <div class="content">
+         
+          <form  id="contactForm">
+            <div class="alert">Your message sent successfully</div>
+            <div class="email">
+              <div class="text">Email *</div>
+              <input id="emails" type="email" required>
+            </div>
+            <div class="msg">
+              <div class="text">Message *</div>
+              <textarea id="messages"  rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="https://youtube.com/c/codingnepal">JuniorLudima</a> | </span>
+        <span class="far fa-copyright"></span><span> 2024 All rights reserved.</span>
+      </center>
+    </div>
+</body>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  color: #d9d9d9;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+.content1{
+  position: relative;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #202020;
+}
+.content1 .p{
+  font-size: 2.1875rem;
+  font-weight: 600;
+  color: #202020;
+}
+footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+}
+.main-content{
+  display: flex;
+  background-color: #000;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #f12020;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #f12020;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #f12020;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color:white;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f12020;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #f12020;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+.content .para{
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+
+</style>
+<style>
+  .alert {
+    width: 85%;
+    background: #0a0406;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 900;
+    display: none;
+    color: white;
+  }
+</style>
+
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+      
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+        }
+      }
+</script>
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
+<script>
+
+ 
+  // initialize firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // reference your database
+  var tourismFormDB = firebase.database().ref("tourism");
+  //contactform is the ID of the form from html
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", submitForm);
+  //if the form get submitted it will call the submitform as a function
+  function submitForm(e) {
+    e.preventDefault();
+
+ 
+    var emails = getElementVal("emails");
+    var messages = getElementVal("messages");
+
+    saveMessages( emails, messages);
+
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+
+    //   remove the alert
+    setTimeout(() => {
+      document.querySelector(".alert").style.display = "none";
+    }, 3000);
+
+    //   reset the form
+    document.getElementById("contactForm").reset();
+  }
+
+  const saveMessages = (emails, messages) => {
+    var newContactForm = tourismFormDB.push();
+
+    newContactForm.set({
+   
+      emails: emails,
+      messages: messages,
+    });
+  };
+
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  };
+       
+ 
+      
+     </script>
+</html>

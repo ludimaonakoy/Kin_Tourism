@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kin_Tourism</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f2f2f2;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #333;
+    }
+
+    .navbar {
+      display: flex;
+      padding: 0 10px;
+      max-width: 1200px;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar input#menu-toggler {
+      display: none;
+    }
+
+    .navbar #hamburger-btn {
+      cursor: pointer;
+      display: none;
+    }
+
+    .navbar .all-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .all-links li {
+      position: relative;
+      list-style: none;
+    }
+
+    .navbar .logo a {
+      display: flex;
+      align-items: center;
+      margin-left: 0;
+    }
+
+    header a,
+    footer a {
+      margin-left: 40px;
+      text-decoration: none;
+      color: #fff;
+      height: 100%;
+      padding: 20px 0;
+      display: inline-block;
+    }
+
+    header a:hover,
+    footer a:hover {
+      color: #ddd;
+    }
+
+    .homepage {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      background: url("kin/commnunes/kitambo03.jpg");
+      background-position: center 65%;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .homepage::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .homepage .content {
+      display: flex;
+      height: 85%;
+      z-index: 3;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .homepage .content h1 {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .homepage .content .text {
+      margin-bottom: 50px;
+      color: #f6f7f0;
+      font-size: 20px;
+      text-align: center;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .content a {
+      color: #000;
+      display: block;
+      text-transform: uppercase;
+      font-size: 18px;
+      margin: 0 10px;
+      padding: 10px 30px;
+      border-radius: 5px;
+      background: #fff;
+      border: 2px solid #fff;
+      transition: 0.4s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+    }
+
+    .content a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 80px 0 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+    }
+
+    section > p {
+      text-align: center;
+    }
+
+    section .cards {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin-top: 50px;
+      padding: 0 10px;
+      justify-content: space-between;
+    }
+
+    section.about {
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    .about .company-info {
+      margin-top: 30px;
+    }
+
+    .about h3 {
+      margin: 30px 0 10px;
+    }
+
+    .about .team {
+      text-align: left;
+      width: 100%;
+    }
+
+    .about .team ul {
+      padding-left: 20px;
+    }
+
+    section .cards .card {
+      background: #fff;
+      padding: 40px 15px;
+      list-style: none;
+      border-radius: 5px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+      margin-bottom: 40px;
+      width: calc(100% / 3 - 30px);
+      text-align: center;
+    }
+
+    .portfolio .cards .card {
+      padding: 0 0 20px;
+    }
+
+    .services .card img {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 20px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+
+    .portfolio .card img {
+      width: 100%;
+      padding-bottom: 10px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 7px;
+    }
+
+    .cards .card p {
+      padding: 0 15px;
+      margin-top: 5px;
+    }
+
+    .about .row {
+      padding: 0 10px;
+    }
+
+    .contact .row {
+      margin: 60px 0 90px;
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .contact .row .col {
+      padding: 0 10px;
+      width: calc(100% / 2 - 50px);
+    }
+
+    .contact .col p {
+      margin-bottom: 10px;
+    }
+
+    .contact .col p i {
+      color: #7a7a7a;
+      margin-right: 10px;
+    }
+
+    .contact form input {
+      height: 45px;
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      outline: none;
+      border: 1px solid #bfbfbf;
+    }
+
+    .contact form textarea {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      height: 150px;
+      outline: none;
+      resize: vertical;
+      border: 1px solid #bfbfbf;
+    }
+
+    .contact form button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 17px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      background: #333;
+      transition: 0.2s ease;
+    }
+
+    .contact form button:hover {
+      background: #525252;
+    }
+
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #000;
+      padding: 20px 0;
+    }
+
+    footer div {
+      padding: 0 10px;
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer span {
+      color: #fff;
+    }
+
+    footer a {
+      padding: 0;
+    }
+
+    @media screen and (max-width: 860px) {
+      .navbar .all-links {
+        position: fixed;
+        left: -100%;
+        width: 300px;
+        display: block;
+        height: 100vh;
+        top: 75px;
+        background: #333;
+        transition: left 0.3s ease;
+      }
+
+      .navbar #menu-toggler:checked ~ .all-links {
+        left: 0;
+      }
+
+      .navbar .all-links li {
+        font-size: 18px;
+      }
+
+      .navbar #hamburger-btn {
+        display: block;
+      }
+
+      section > p {
+        text-align: center;
+      }
+
+      section .cards .card {
+        width: calc(100% / 2 - 15px);
+        margin-bottom: 30px;
+      }
+
+      .homepage .content h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .homepage .content .text {
+        font-size: 17px;
+      }
+
+      .content a {
+        font-size: 17px;
+        padding: 9px 20px;
+      }
+
+      .contact .row {
+        flex-direction: column;
+      }
+
+      .contact .row .col {
+        width: 100%;
+      }
+
+      .contact .row .col:last-child {
+        margin-top: 40px;
+      }
+
+      footer a {
+        height: 0;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      section .cards .card {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+    .alert {
+      width: 85%;
+      background: #0a0406;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+      display: none;
+      color: white;
+    }
+  </style>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">Kin_Tourism</a></h2>
+        <input type="checkbox" id="menu-toggler" />
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="white"
+            width="24px"
+            height="24px"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </label>
+        <ul class="all-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="Food.html">Food</a></li>
+          <li><a href="myculture.html">Culture</a></li>
+          <li><a href="edication.html">Education</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="homepage" id="home">
+      <div class="content">
+        <div class="text">
+          <h1>Kin la Belle</h1>
+
+          <p>
+            welcome Home.Welcome to my city, <br />
+            Get Ready to make unforgettable memories.
+          </p>
+        </div>
+        <a href="#services">Mboka Elengi</a>
+      </div>
+    </section>
+    <section class="services" id="services">
+      <h2>Visit Kinshasa</h2>
+      <p>See what other travelers like to do, Kinshasa Attractions.</p>
+      <ul class="cards">
+        <li class="card">
+          <img src="kin/commnunes/ndjili04.JPG" alt="img" />
+          <h3>N'djili Airport</h3>
+          <p>
+            Also known as N'Djili International Airport and Kinshasa
+            International Airport.
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/kin02.jpg" alt="img" />
+          <h3>Traffic Robots in Kinshasa</h3>
+          <p>
+            Kinshasa has adopted an innovative way of managing traffic along its
+            city streets.
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/safari.jpg" alt="img" />
+          <h3>Visite Safari Beach</h3>
+          <p>
+            Excellent to chill out on weekends of Safari Beach Resort,
+            N'sele-Kinshasa. Safari Beach Resort.
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/park.jpg" alt="img" />
+          <h3>Parc de la Vallée de la Nsele</h3>
+          <p>
+            Nsele Valley Park,known as Kingakati Park or N'Sele Nature Reserve,
+            is a nature reserve located in the Maluku commune of Kinshasa.
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/hilton.jpg" alt="img" />
+          <h3>Hilton Kinshasa</h3>
+          <p>
+            The newly completed Hilton Kinshasa is the Democratic Republic of
+            Congo’s premier business hotel and proudly operating with the Hilton
+            brand.
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/river.jpg" alt="img" />
+          <h3>Congo River</h3>
+          <p>
+            its worth getting on or near the river to appreciate the size and
+            strength of it. There are some nice.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <h2>Explore Kin</h2>
+      <p>Take a look at some of our beautiful commune.</p>
+      <ul class="cards">
+        <li class="card">
+          <img src="kin/commnunes/gombe01.jfif" alt="img" />
+          <h3>Commnune de la Gombe</h3>
+          <p>
+            its a residential area and a central business district, Gombe houses
+            several key government institutions of the DRC, and various
+            ministries, and diplomatic representations...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/barumbu01.jpg" alt="img" />
+          <h3>Commune de Barumbu</h3>
+          <p>
+            Barumbu is a municipality in the Lukunga district of Kinshasa, the
+            capital city of the Democratic Republic of the Congo. It is situated
+            in the north of Kinshasa, south of Gombe...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/kalamu05.jpg" alt="img" />
+          <h3>Commune de Kalamu</h3>
+          <p>
+            Kalamu is a municipality in the Funa district of Kinshasa, the
+            capital city of the Democratic Republic of the Congo...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/kasa02.jpg" alt="img" />
+          <h3>Commune de Kasavubu</h3>
+          <p>
+            Kasa-Vubu is a municipality in the Funa district of Kinshasa, the
+            capital city of the Democratic Republic of the Congo. Along with
+            Kalamu, it forms the historical African heart of Kinshasa...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/kin04.jpg" alt="img" />
+          <h3>Commune de Kinshasa</h3>
+          <p>
+            Kinshasa is a municipalityin the Lukunga district of the city of
+            Kinshasa, the capital of the Democratic Republic of the Congo. It is
+            situated in the north of the city, south of Gombe and the Boulevard
+            du 30 Juin...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/kitambo02.jpg" alt="img" />
+          <h3>Commune de Kitambo</h3>
+          <p>
+            Kintambo is a municipality in the Lukunga district of Kinshasa, It
+            is situated in the northwest of the city of Kinshasa, at the
+            junction of Boulevard du 30 Juin, Avenue Kasa-Vubu and Route de
+            Matadi...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/limete03.webp" alt="img" />
+          <h3>Commune de Limete</h3>
+          <p>
+            Limete is located south of the Pool Malebo between the mouths of the
+            Funa and Ndjili rivers...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/lingwa04.jpg" alt="img" />
+          <h3>Commune de Lingwala</h3>
+          <p>
+            lingwala is a municipality in the Lukunga district of Kinshasa, the
+            capital city of the Democratic Republic of the Congo. It is situated
+            in northern Kinshasa, south of Gombe and Boulevard du 30 Juin...<br />
+            ⭐⭐⭐⭐⭐
+          </p>
+        </li>
+        <li class="card">
+          <img src="kin/commnunes/masina06.jpg" alt="img" />
+          <h3>Commune de Masina</h3>
+          <p>
+            Masina is a municipality in the Tshangu District of Kinshasa, the
+            capital city of the Democratic Republic of the Congo. It is bordered
+            by the Pool Malebo in the north and Boulevard Lumbumba to the
+            south...<br />
+            ⭐⭐⭐⭐⭐ .
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="about" id="about">
+      <h2>Country Overview</h2>
+      <p>Discover our story in exploring kinshasa.</p>
+      <div class="row company-info">
+        <h3>Our Story</h3>
+        <p>
+          Léopoldville was renamed Kinshasa, for a village named Kinshasa that
+          once stood near the site. Kinshasa grew rapidly under Mobutu, drawing
+          people from across the country who came in search of their fortunes or
+          to escape ethnic strife elsewhere, thus adding to the many ethnicities
+          and languages already found there..
+        </p>
+      </div>
+      <div class="row mission-vision">
+        <h3>Our Mission</h3>
+        <p>
+          diversification and transformation of the economy,development and
+          modernization of infrastructure,social development and inclusion of
+          disadvantaged We educate and equip change-makers and model
+          transformation by holistically renewing communities and promoting
+          systemic justice in the Democratic Republic of Congo..
+        </p>
+        <h3>Our Vision</h3>
+        <p>
+          We envision a Democratic Republic of Congo where every life matters
+          and human potential is unleashed to create thriving and just
+          communities, We educate and equip change-makers and model
+          transformation by holistically renewing communities and promoting
+          systemic justice in the Democratic Republic of Congo...
+        </p>
+      </div>
+      <!-- <div class="row team">
+        <h3>Our Team</h3>
+        <ul>
+          <li>John Doe - Founder and CEO</li>
+          <li>Jane Smith - Gear Specialist</li>
+          <li>Mark Johnson - Customer Representative</li>
+          <li>Sarah Brown - Operations Manager</li>
+        </ul>
+      </div> -->
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out to us for any inquiries or feedback.</p>
+      <div class="row">
+        <div class="col information">
+          <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Mbagathi, HighRise</p>
+            <p><i class="fas fa-envelope"></i>ludimajunior@Gmail.com</p>
+            <p><i class="fas fa-phone"></i> (+254)717718388</p>
+            <p>
+              <i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM
+            </p>
+            <p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 3:00 PM</p>
+            <p><i class="fas fa-clock"></i> Sunday: Closed</p>
+            <p>
+              <i class="fas fa-globe"></i>
+              https://ludimaonakoy.github.io/JL_Services/
+            </p>
+          </div>
+        </div>
+        <div class="col form">
+          <form id="contactForm">
+            <div class="alert">Your message sent successfully</div>
+            <br />
+            <input id="names" type="text" placeholder="Name*" required />
+            <input id="emails" type="email" placeholder="Email*" required />
+            <textarea id="messages" placeholder="Message*" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span>Copyright © 2024 All Rights Reserved</span>
+        <span class="link">
+          <a href="#">Home</a>
+          <a href="#contact">Contact</a>
+        </span>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    </footer>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyB5MoarHGmv_NHoKwejqEblvNGo7dIu0K8",
+        authDomain: "tourism-2f1ec.firebaseapp.com",
+        databaseURL: "https://tourism-2f1ec-default-rtdb.firebaseio.com",
+        projectId: "tourism-2f1ec",
+        storageBucket: "tourism-2f1ec.appspot.com",
+        messagingSenderId: "463571609129",
+        appId: "1:463571609129:web:268a39fe8aebb55295de38",
+        measurementId: "G-KTEWH2YHTG",
+      };
+      // initialize firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // reference your database
+      var tourismFormDB = firebase.database().ref("tourism");
+      //contactform is the ID of the form from html
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", submitForm);
+      //if the form get submitted it will call the submitform as a function
+      function submitForm(e) {
+        e.preventDefault();
+
+        var names = getElementVal("names");
+        var emails = getElementVal("emails");
+        var messages = getElementVal("messages");
+
+        saveMessages(names, emails, messages);
+
+        //   enable alert
+        document.querySelector(".alert").style.display = "block";
+
+        //   remove the alert
+        setTimeout(() => {
+          document.querySelector(".alert").style.display = "none";
+        }, 3000);
+
+        //   reset the form
+        document.getElementById("contactForm").reset();
+      }
+
+      const saveMessages = (names, emails, messages) => {
+        var newContactForm = tourismFormDB.push();
+
+        newContactForm.set({
+          names: names,
+          emails: emails,
+          messages: messages,
+        });
+      };
+
+      const getElementVal = (id) => {
+        return document.getElementById(id).value;
+      };
+    </script>
+  </body>
+</html>
